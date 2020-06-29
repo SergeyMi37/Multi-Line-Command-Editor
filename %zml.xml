@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="IRIS for Windows (x86-64) 2020.1 (Build 215U)" ts="2020-06-29 14:22:52">
+<Routine name="%zml" type="INT" languagemode="0" timestamp="65559,49899.874243"><![CDATA[
+%zml	;
+	write "Entering multi line mode. Run with empty line. Stop with single ""."""
+	new %zml
+zml	xecute "zr  zi ""1 ;"" zs zml"_$j
+	do {
+		write !,$namespace_":zml:"_$i(%zml(1))_"> "
+ 		read %zml
+		if %zml="." {
+			xecute "zr  zs zml"_$j
+			kill %zml 
+			return
+			} 
+ 		set %zml(2)="zl zml"_$j_" zi "" ""_%zml:+"_%zml(1)_" zs"
+		xecute %zml(2)
+	} while %zml]""
+	write !
+ 	try { 
+		do @("1^zml"_$j) 
+		kill %zml}
+ 	catch %zml {
+ 		write "^",!,%zml.Name_$e($p(%zml.Location,"^"),2,*),!
+		kill %zml  
+		quit }
+	goto zml
+]]></Routine>
+</Export>
