@@ -1,8 +1,8 @@
 # Terminal-Multi-Line-Option
 Add Multi Line Terminal Option  
-IRIS and Caché have just single command lines in termal available  
+IRIS and Caché have just single command lines in terminal available  
 
-This Command extention enables execution of Multi Line Commands from Terminal prompt.
+This Command extension enables execution of Multi Line Commands from Terminal prompt.
 
 ## Installation & Execution ## 
 Import %ZML.xml to Namespace %SYS  
@@ -19,7 +19,7 @@ otherwise just call it from terminal command prompt
 
 ## Usage ##
 at the prompt _USER:zml:1>_  
-enter commands as ususal  
+enter commands as usual  
 trigger execution by an empty line  
 stop multi line option with a single '.' (dot) at first position  
 
