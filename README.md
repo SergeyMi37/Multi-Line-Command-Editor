@@ -21,7 +21,7 @@ otherwise just call it from terminal command prompt
 at the prompt _USER:zml:1>_  
 enter commands as ususal  
 trigger execution by an empty line  
-stop multi line option with '.' (dot)  
+stop multi line option with a single '.' (dot) at first position  
 
 ## Example ###
 ~~~
