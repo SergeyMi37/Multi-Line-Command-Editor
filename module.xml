@@ -8,6 +8,7 @@
       <Keywords>Terminal, COS</Keywords>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
+       <Resource Name="%zml.int"/>
     </Module>
   </Document>
 </Export>
