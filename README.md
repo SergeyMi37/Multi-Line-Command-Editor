@@ -14,18 +14,14 @@ ZML do ^%zml quit  ; add multi line command in terminal
 
 otherwise just call it from terminal command prompt
 ~~~
-  USER>__do ^%zml__
+  USER>do ^%zml
 ~~~
 
 ## Usage ##
-after the prompt  
-     USER>zml  
-     Entering multi line mode. Run with empty line. Stop with single "."   
-     __USER:zml:1> __
-     
-enter commands as ususal
-trigger execution by an empty line
-stop mulit line option witbn '.' (dot)
+at the prompt _USER:zml:1>_  
+enter commands as ususal  
+trigger execution by an empty line  
+stop multi line option with '.' (dot)  
 
 ## Example ###
 ~~~
