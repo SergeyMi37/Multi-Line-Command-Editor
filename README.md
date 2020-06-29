@@ -1,4 +1,4 @@
-# Terminal-Muliti-Line-Option
+# Terminal-Multi-Line-Option
 Add Multi Line Terminal Option  
 IRIS and Caché have just single command lines in termal available  
 
