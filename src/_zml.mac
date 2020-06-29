@@ -1,4 +1,4 @@
-%zml	;
+ROUTINE %zml
 	write "Entering multi line mode. Run with empty line. Stop with single ""."""
 	new %zml
 zml	xecute "zr  zi ""1 ;"" zs zml"_$j

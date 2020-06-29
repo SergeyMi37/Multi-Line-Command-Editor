@@ -1,0 +1,15 @@
+{
+    "objectscript.conn" :{
+      "ns": "IRISAPP",
+      "active": true,
+      "docker-compose": {
+        "service": "iris",
+        "internalPort": 52773
+      },
+      "links": {
+        "RESTForms2-UI": "http://localhost:${port}/restforms2-ui/index.html"
+
+    }
+  }
+
+}
