@@ -19,9 +19,9 @@ otherwise just call it from terminal command prompt
 
 ## Usage ##
 after the prompt  
-   __USER>zml  
+     USER>zml  
      Entering multi line mode. Run with empty line. Stop with single "."   
-     USER:zml:1> __
+     __USER:zml:1> __
      
 enter commands as ususal
 trigger execution by an empty line
