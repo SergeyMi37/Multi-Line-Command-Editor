@@ -1,5 +1,5 @@
 # Terminal-Multi-Line-Option
-Add Terminal Multi-Line Terminal Option for IRIS and Caché  
+Add Terminal Multi-Line Option for IRIS and Caché  
 IRIS and Caché have just single command lines in terminal available  
 
 This Command extension enables execution of Multi Line Commands from Terminal prompt.
