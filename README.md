@@ -1,26 +1,26 @@
 # Terminal Multi-Line Command Editor #
-Terminal Multi-Line Input with Edit, Insert, Delete, Print extension for IRIS and Caché 
-IRIS and Caché have just single command lines in terminal available  
+Terminal Multi-Line Input with Edit, Insert, Delete, Print extension for IRIS and Caché   
+IRIS and Caché have just single command lines in terminal available   
 This Multi-Line Commands Editor also wil-l execute the Commands.  
-In addtion it is now independent of access to __%SYS__ an can be installed in any namespace 
+In addtion it is now independent of access to __%SYS__ an can be installed in any namespace   
 
-Is is tetsted on IRIS / Caché Terminal , Putty, Linux Console, Docker Console,
-Desktop Dockker wieht Windows Command and WebTerminal.
+Is is tetsted on IRIS / Caché Terminal , Putty, Linux Console, Docker Console,  
+Desktop Dockker wieht Windows Command and WebTerminal.  
 
-This broad range of termnal emulatins required navigation without any <ESC> sequences as
-some of them are quite restrictive on input. So it got a litlebi vi feeling.
+This broad range of termnal emulatins required navigation without any <ESC> sequences as  
+some of them are quite restrictive on input. So it got a litlebi vi feeling.  
   
-## Installation & Execution ## 
-Import ZME.xml to any namespace.
+## Installation & Execution ##  
+Import ZME.xml to any namespace.  
 
 For a system wide installation in  %SYS just renae it from zme to %zme  
-You may add this line to your %ZLANGC00.mac for simplified use:
+You may add this line to your %ZLANGC00.mac for simplified use:  
 ~~~
-ZME do ^%zme quit  ; add multi line command extended in terminal
+ZME do ^%zme quit  ; add multi line command extended in terminal  
 ~~~
 
 otherwise just call it from terminal command prompt
-~~~
+~~~  
   USER>do ^zme
 ~~~
 
@@ -29,11 +29,11 @@ at the prompt _USER:zme>1_
 enter commands as usual interminal 
 trigger execution by an empty line  
 
-These Editor Commands are implemented:
+These Editor Commands are implemented:  
 
-USER>d ^zme
- 
 ~~~
+    USER>d ^zme
+ 
     Entering multi line mode.
     <enter> => Run multi-line command.
     . => Stop multi-line mode
