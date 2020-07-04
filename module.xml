@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="terminal-multilin-editor.ZPM">
+  <Document name="terminal-multiline-editor.ZPM">
     <Module>
       <Name>terminal-multiline-editor</Name>
       <Version>1.0.2</Version>
