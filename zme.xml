@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2018.1.3 (Build 414U)" ts="2020-07-03 23:54:34">
+<Routine name="zme" type="MAC" languagemode="0" timestamp="65563,86062.484758"><![CDATA[
+zme	
+#; %zml + editor
+	write !,"Entering multi line mode."
+	do help
+new	new %zml,%
+	xecute "ZR  ZI "" ;dummy"" ZS zml"_$job
+	do zml 
+stp
+	do init
+	kill %zml,%
+	return
+zml	
+	do {
+		write !,$namespace_":zme>"_$i(%)_" "
+ 		read %zml
+ 		if %zml="." return
+		if $e(%zml)="." {
+			set %(1)=$zcvt($e(%zml,2),"U")
+			set %(2)=%-1
+			do $case(%(1),"D":delete
+						,"E":edit
+						,"I":insert
+						,"P":print
+						,"?":help
+						,:noop)
+			set %=%(2)
+			continue
+			}
+		if %zml]"" set %zml(%)=%_" "_%zml
+	} while %zml]""
+	
+	if ($d(%zml)>1)&&(%zml="") {
+		write !
+		do save
+	 	try { 
+			do @("^zml"_$j) 
+			}
+	 	catch %zml {
+	 		write !,$p($ZE,"^"),! 
+			quit 
+			}
+		}
+	goto zml
+noop
+	write "  <<< unknown command"
+	quit
+init
+	xecute "zr  zs zml"_$j
+	quit
+save
+	if $d(%zml)>1 {
+	 		xecute "ZR  for %=1:1:$o(%zml(""""),-1) { ZI %zml(%) } ZS zml"_$job
+	}
+	quit
+p0	set %zml=".p"
+print
+	do range
+	write ! 
+	for %(6)=%(4):1:%(5) write %zml(%(6)),!
+	quit
+range
+	set %(3)=$e(%zml,3,*)
+		,%(4)=+$p(%(3),":")
+	if %(3)="" {
+		set %(4)=1
+			,%(5)=$o(%zml(""),-1)
+	} elseif %(3)[":" {
+		set %(5)=+$p(%(3),":",2)
+	} else {
+		set %(5)=%(4)
+	}
+	quit
+delete
+	do range
+	for %(6)=%(4):1:%(5) kill %zml(%(6))
+	do renum
+	if '%(6) do init
+	do p0
+	quit
+renum
+	set %(6)=0
+	for {
+		set %(8)=$o(%zml(%(6)),1,%(9))
+		quit:%(8)=""
+		if $i(%(6))=%(8) continue
+		set %zml(%(6))=%(6)_" "_$p(%(9)," ",2,*)
+		kill %zml(%(8))
+		}
+	set %(2)=%(6)
+	quit
+insert
+	set %(3)=+$e(%zml,3,*)
+		,%(5)=$o(%zml(""),-1)
+	if (%(3)<0)||(%(3)>%(5)) set %(3)=%(5)
+	if $i(%(3))
+	if '$d(%zml(%(3))) quit
+	for %(6)=%(5):-1:%(3) {
+		set %zml(%(6)+1)=%(6)+1_" "_$p(%zml(%(6))," ",2,*)
+		} 
+	set %zml(%(3))=%(3)_" "
+		,%(2)=%(3)-1
+	do p0
+	quit
+edit
+	set %(3)=+$e(%zml,3,*)
+	if '%(3) {
+		set %(3)=$o(%zml(""),-1,%(4))
+	} else  {
+		set %(4)=$g(%zml(%(3)))
+	}
+	set %(4)=$p(%(4)," ",2,*)
+	write !
+	do line
+	set %zml(%(3))=%(3)_" "_%(4)
+refresh
+	do p0
+	quit
+line	
+	set (%(5),%(6),%(7))=0
+	while 1 { 
+		set %(9)=" "_%(4)
+		write $c(27)_"[2K",$c(13)
+			,$s(%(7):"rep>",1:"ins>"),+%(3)
+			,$e(%(9),1,%(5)),$c(27)_"[7m",$e(%(9),%(5)+1)
+			,$c(27)_"[m",$e(%(9),%(5)+2,*)
+			,"  cmd>"
+		read %(6)#1
+		if %(6)="." do cmd continue		; . = line edit control
+		if %(6)="" quit					; stop edit
+		if %(6)?1C continue				; Control Char
+dot
+		if '%(7) {
+			set %(4)=$e(%(4),1,%(5))_%(6)_$e(%(4),%(5)+1,*)
+			if $i(%(5))					; insert
+		} else  {
+			set $e(%(4),%(5))=%(6)		; replace
+			if %(5)<$l(%(4)),$i(%(5))
+		}  
+	}
+	quit 
+cmd
+		read %(6)#1 
+		if %(6)?1N read %(9)#1:2			;what
+		set %(6)=$zcvt(%(6),"U")
+		do $case(%(6),"+":cp				; + fwd
+					,"-":cm					; - bck
+					,"I":ci					; I insert
+					,"R":cr					; R replace
+					,"D":cd					; D delete
+					,".":dot
+					,:cq )
+cq	if %(6)?1N {
+		set %(5)=(%(6)_%(9))\1
+		set:$l(%(4))<%(5) %(5)=$l(%(4))
+		if '%(5),$i(%(5),%(7))
+		write "goto" 
+	}
+	quit
+cp	set:$l(%(4))>%(5) %(5)=%(5)+1 quit
+cm	set:%(5)>%(7) %(5)=%(5)-1 quit
+ci	set %(7)=0 quit	 
+cr	set %(7)=1 if '%(5),$i(%(5)) 
+	quit
+cd 	set $e(%(4),%(5))=""
+	do:$l(%(4))<%(5) cm quit
+	
+help
+	write !,"<enter> => Run multi-line command."
+		,!,". => Stop multi-line mode"
+		,!,".i, .i<line> => Insert new empty line after <line>"
+		,!,".d, .d<line>, .d<linefrom>:<lineto> => Delete lines"
+		,!,".p, .p<line>, .p<linefrom>:<lineto> => Show lines "
+		,!,".? => show this help"
+		,!,".e, .e<line> => Edit line"
+		,!!,"***** line editing commands *****"
+		,!,".+ => move edit cursor forward "
+		,!,".- => move edit cursor backward "
+		,!,".nn => move edit cursor to position nn "
+		,!,".r => set mode replace at cursor"
+		,!,".i => set mode insert after cursor"
+		,!,".d => delete character at cursor"
+		,!,"<enter> => terminate line editing"
+		,!,"<any character> => replace / insert after cursor"
+		,!,".. => input single ."
+		,!
+	quit
+]]></Routine>
+</Export>
