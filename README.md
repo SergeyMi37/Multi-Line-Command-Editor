@@ -7,7 +7,7 @@ In addtiion, it is independent of access to __%SYS__ and can be installed in any
 It is tested on IRIS/Caché Terminal , Putty, Linux Console, Docker Console,   
 Desktop Docker from Windows Command _and WebTerminal._  
 
-This broad range of terminal emulations required navigation without any <ESC> sequences   
+This broad range of terminal emulations required navigation without any \<ESC> sequences   
 as some of them are quite restrictive on input. So it got a little bit feeling like vi.  
   
 ## Installation & Execution ##  
