@@ -19,7 +19,7 @@ You may also add this line to your %ZLANGC00.mac for simplified use:
 ZME do ^%zme quit  ; add multi line command extended in terminal  
 ~~~
 
-oOtherwise, just call it from terminal command prompt  
+Otherwise, just call it from terminal command prompt  
 ~~~  
   USER>do ^zme  
 ~~~
