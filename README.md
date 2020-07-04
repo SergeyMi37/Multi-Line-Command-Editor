@@ -27,7 +27,7 @@ Otherwise, just call it from terminal command prompt
 ## Usage ##
 at the prompt _USER:zme>1_   
 enter commands as usual in terminal   
-trigger execution by an empty line  with <enter>  
+trigger execution by an empty line  with \<enter>  
 
 These Editor Commands are implemented:  
 
