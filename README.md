@@ -2,24 +2,24 @@
 Terminal Multi-Line Input with Edit, Insert, Delete, Print extension for IRIS and Caché   
 IRIS and Caché have just single command lines in terminal available   
 This Multi-Line Commands Editor also will execute the Multi-line Commands.  
-In addtion it is independent of access to __%SYS__ an can be installed in any namespace   
+In addtiion, it is independent of access to __%SYS__ and can be installed in any namespace   
 
-It is tetsted on IRIS/Caché Terminal , Putty, Linux Console, Docker Console,   
-Desktop Dockker from Windows Command _and WebTerminal._  
+It is tested on IRIS/Caché Terminal , Putty, Linux Console, Docker Console,   
+Desktop Docker from Windows Command _and WebTerminal._  
 
 This broad range of terminal emulations required navigation without any <ESC> sequences   
-as some of them are quite restrictive on input. So it got a litle bit feeling like vi.  
+as some of them are quite restrictive on input. So it got a little bit feeling like vi.  
   
 ## Installation & Execution ##  
 Import ZME.xml to any namespace.  
 
-For a system wide installation in _%SYS_ just rename it from zme to %zme   
+For a system-wide installation in _%SYS_ just rename it from zme to %zme   
 You may also add this line to your %ZLANGC00.mac for simplified use:   
 ~~~
 ZME do ^%zme quit  ; add multi line command extended in terminal  
 ~~~
 
-otherwise just call it from terminal command prompt  
+oOtherwise, just call it from terminal command prompt  
 ~~~  
   USER>do ^zme  
 ~~~
