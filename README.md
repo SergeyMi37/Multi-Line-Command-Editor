@@ -16,7 +16,7 @@ Import ZME.xml to any namespace.
 For a system-wide installation in _%SYS_ just rename it from zme to %zme   
 You may also add this line to your %ZLANGC00.mac for simplified use:   
 ~~~
-ZME do ^%zme quit  ; add multi line command extended in terminal  
+ZME do ^%zme quit  ; add multi line command editor  
 ~~~
 
 Otherwise, just call it from terminal command prompt  
