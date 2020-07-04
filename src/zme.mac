@@ -1,4 +1,5 @@
-ROUTINE zme	; %zml + editor
+ROUTINE zme	
+#; %zml + editor
 	write !,"Entering multi line mode."
 	do help
 new	new %zml,%
