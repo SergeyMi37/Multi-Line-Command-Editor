@@ -1,33 +1,33 @@
 # Terminal Multi-Line Command Editor #
 Terminal Multi-Line Input with Edit, Insert, Delete, Print extension for IRIS and Caché   
 IRIS and Caché have just single command lines in terminal available   
-This Multi-Line Commands Editor also wil-l execute the Commands.  
-In addtion it is now independent of access to __%SYS__ an can be installed in any namespace   
+This Multi-Line Commands Editor also will execute the Multi-line Commands.  
+In addtion it is independent of access to __%SYS__ an can be installed in any namespace   
 
-Is is tetsted on IRIS / Caché Terminal , Putty, Linux Console, Docker Console,  
-Desktop Dockker wieht Windows Command and WebTerminal.  
+It is tetsted on IRIS/Caché Terminal , Putty, Linux Console, Docker Console,   
+Desktop Dockker from Windows Command _and WebTerminal._  
 
-This broad range of termnal emulatins required navigation without any <ESC> sequences as  
-some of them are quite restrictive on input. So it got a litlebi vi feeling.  
+This broad range of terminal emulations required navigation without any <ESC> sequences   
+as some of them are quite restrictive on input. So it got a litle bit feeling like vi.  
   
 ## Installation & Execution ##  
 Import ZME.xml to any namespace.  
 
-For a system wide installation in  %SYS just renae it from zme to %zme  
-You may add this line to your %ZLANGC00.mac for simplified use:  
+For a system wide installation in _%SYS_ just rename it from zme to %zme   
+You may also add this line to your %ZLANGC00.mac for simplified use:   
 ~~~
 ZME do ^%zme quit  ; add multi line command extended in terminal  
 ~~~
 
-otherwise just call it from terminal command prompt
+otherwise just call it from terminal command prompt  
 ~~~  
-  USER>do ^zme
+  USER>do ^zme  
 ~~~
 
 ## Usage ##
 at the prompt _USER:zme>1_   
-enter commands as usual interminal   
-trigger execution by an empty line    
+enter commands as usual in terminal   
+trigger execution by an empty line  with <enter>  
 
 These Editor Commands are implemented:  
 
