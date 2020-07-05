@@ -5,7 +5,7 @@
       <Name>terminal-multiline-editor</Name>
       <Version>1.0.3</Version>
       <Description>Multi-Line Command Editor</Description>
-      <Keywords>Terminal, COS</Keywords>
+      <Keywords>Terminal, COS, Multi-Line</Keywords>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
        <Resource Name="zme.MAC"/>
