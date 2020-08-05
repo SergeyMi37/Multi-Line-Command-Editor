@@ -62,3 +62,5 @@ These Editor Commands are implemented:
 
     USER:zml>1
 ~~~
+
+[Article in DC](https://community.intersystems.com/post/terminal-multi-line-command-editor)
