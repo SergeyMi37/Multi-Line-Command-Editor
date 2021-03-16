@@ -3,8 +3,8 @@
   <Document name="terminal-multiline-editor.ZPM">
     <Module>
       <Name>terminal-multiline-editor</Name>
-      <Version>1.0.5</Version>
-      <Description>Multi-Line Command Editor</Description>
+      <Version>1.0.7</Version>
+      <Description>Terminal Multi-Line Input with Edit, Insert, Delete, Print extension</Description>
       <Keywords>Terminal, COS, Multi-Line</Keywords>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
