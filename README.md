@@ -50,27 +50,28 @@ These Editor Commands are implemented:
 ~~~
     USER>d ^zme
  
-    Entering multi line mode.
-    <enter> => Run multi-line command.
-    . => Stop multi-line mode
-    .i, .i<line> => Insert new empty line after <line>
-    .d, .d<line>, .d<linefrom>:<lineto> => Delete lines
-    .p, .p<line>, .p<linefrom>:<lineto> => Show lines
-    .? => show this help
-    .e, .e<line> => Edit line
-
-    ***** line editing commands *****
-    .+ => move edit cursor forward
-    .- => move edit cursor backward
-    .nn => move edit cursor to position nn
-    .r => set mode replace at cursor
-    .i => set mode insert after cursor
-    .d => delete character at cursor
-    <enter> => teminate line editing
-    <any character> => replace / insert after cursor
-    .. => input single .
-
-    USER:zml>1
+Entering multi line mode.
+<enter> => Run multi-line command.
+. => Stop multi-line mode
+.i, .i<line> => Insert new empty line after <line>
+.d, .d<line>, .d<linefrom>:<lineto> => Delete lines
+.p, .p<line>, .p<linefrom>:<lineto> => Show lines
+.? => show this help
+ 
+.e, .e<line> => Edit line
+     ***** line editing commands *****
+     .+ => move edit cursor forward
+     .- => move edit cursor backward
+     .nn => move edit cursor to position nn
+     .r => set mode replace at cursor
+     .i => set mode insert after cursor
+     .d => delete character at cursor
+     <enter> => teminate line editing
+     <any character> => replace / insert after cursor
+     .. => input single .
+     ***** line editing commands *****
+ 
+USER:zme>1
 ~~~
 [see Video](https://www.youtube.com/watch?v=vwE-agZxRW8)   
 [Article in DC](https://community.intersystems.com/post/terminal-multi-line-command-editor)    
