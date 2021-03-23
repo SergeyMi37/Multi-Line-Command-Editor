@@ -4,10 +4,10 @@ zn "%SYS"
 Do ##class(Security.Users).UnExpireUserPasswords("*")
 
 zn "USER"
-zpm "load /opt/irisbuild/ -v":1:1
+zpm "load /opt/irisbuild/ -v"    ; no halt after istall !!  :1:1
 do setup^zme
 Y
-ZME
+zme
 .
-hang 10
+write "DONE !!",!
 halt
