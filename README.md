@@ -11,8 +11,7 @@ This broad range of terminal emulations required navigation without any \<ESC> s
 as some of them are quite restrictive on input. So it got a little bit feeling like vi.  
 ## Installation with Docker ## 
 __Prerequisites__
-Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)    
-and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.  
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.  
 __Installation__ 
 Clone/git pull the repo into any local directory
 ```
