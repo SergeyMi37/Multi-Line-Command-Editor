@@ -1,7 +1,7 @@
 ROUTINE zme	
 #; %zml + editor
 	write !,"Entering multi line mode."
-	do help
+	do setup, help
 new	new %zml,%
 	xecute "ZR  ZI "" ;dummy"" ZS zml"_$job
 	do zml 
@@ -45,7 +45,7 @@ noop
 	write "  <<< unknown command"
 	quit
 init
-	xecute "zr  zs zml"_$j
+	xecute "zr  zs zml"_$job
 	quit
 save
 	if $d(%zml)>1 {
@@ -171,16 +171,35 @@ help
 		,!,".d, .d<line>, .d<linefrom>:<lineto> => Delete lines"
 		,!,".p, .p<line>, .p<linefrom>:<lineto> => Show lines "
 		,!,".? => show this help"
-		,!,".e, .e<line> => Edit line"
-		,!!,"***** line editing commands *****"
-		,!,".+ => move edit cursor forward "
-		,!,".- => move edit cursor backward "
-		,!,".nn => move edit cursor to position nn "
-		,!,".r => set mode replace at cursor"
-		,!,".i => set mode insert after cursor"
-		,!,".d => delete character at cursor"
-		,!,"<enter> => teminate line editing"
-		,!,"<any character> => replace / insert after cursor"
-		,!,".. => input single ."
+		,!!,".e, .e<line> => Edit line"
+		,!?5,"***** line editing commands *****"
+		,!?5,".+ => move edit cursor forward "
+		,!?5,".- => move edit cursor backward "
+		,!?5,".nn => move edit cursor to position nn "
+		,!?5,".r => set mode replace at cursor"
+		,!?5,".i => set mode insert after cursor"
+		,!?5,".d => delete character at cursor"
+		,!?5,"<enter> => teminate line editing"
+		,!?5,"<any character> => replace / insert after cursor"
+		,!?5,".. => input single ."
+		,!?5,"***** line editing commands *****"
 		,!
 	quit
+setup
+	if $l($text(ZME^%ZLANGC00)) quit
+	read !,"Create extended command ZME? [Y] :",%("s")
+	if "yY"'[%("s") quit
+	set %("s")=##class(%Routine).%OpenId("zme")
+	set %("s").RoutineName="%zme"
+	do %("s").Save(),%("s").Compile("ck")
+	set %("s")=##class(%Routine).%OpenId("%ZLANGC00")
+	do %("s").MoveToEnd()
+	do %("s").WriteLine("#; ")
+	do %("s").WriteLine("#; Multiline Editor")
+	do %("s").WriteLine("ZME do ^%zme quit   ;")
+	do %("s").WriteLine("#; ")
+	do %("s").Save(),%("s").Compile("ck")
+	kill %("s")
+	write !
+	quit
+	
