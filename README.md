@@ -49,7 +49,7 @@ trigger execution by an empty line  with \<enter>
 
 These Editor Commands are implemented:  
 ~~~
-    USER>d ^zme
+    USER>zme
  
 Entering multi line mode.
 <enter> => Run multi-line command.
