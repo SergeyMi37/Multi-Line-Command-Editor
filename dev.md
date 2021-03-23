@@ -15,6 +15,8 @@ docker system prune -f
 ## global export
  $System.OBJ.Export("GlobalName.GBL","/irisdev/app/src/gbl/globalname.xml")
 ```
+ 
+
 
 
 
