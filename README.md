@@ -1,9 +1,3 @@
- ~~~
- This is a coding example working on IRIS 2020.1 and on Caché 2018.1.3 
- It will not be kept in sync with new versions      
- It is also NOT serviced by InterSystems Support !   
-~~~ 
-
 # Terminal Multi-Line Command Editor #
 Terminal Multi-Line Input with Edit, Insert, Delete, Print extension for IRIS and Caché   
 IRIS and Caché have just single command lines in terminal available   
@@ -19,13 +13,10 @@ as some of them are quite restrictive on input. So it got a little bit feeling l
 ## Installation & Execution ##  
 Import ZME.xml to any namespace.  
 
-For a system-wide installation in _%SYS_ just rename it from zme to %zme   
-You may also add this line to your %ZLANGC00.mac for simplified use:   
-~~~
-ZME do ^%zme quit  ; add multi line command editor  
-~~~
+After the first start you can trigger a system-wide installation in _%SYS_ as %zme     
+in combinatin with a Command Extention ZME for simplified use (added to %ZLANGC00.mac)   
 
-Otherwise, just call it from terminal command prompt  
+At first run and if not a Command Extention just call it from terminal command prompt  
 ~~~  
   USER>do ^zme  
 ~~~
@@ -62,5 +53,5 @@ These Editor Commands are implemented:
 
     USER:zml>1
 ~~~
-
+[see Video](https://www.youtube.com/watch?v=vwE-agZxRW8)
 [Article in DC](https://community.intersystems.com/post/terminal-multi-line-command-editor)
