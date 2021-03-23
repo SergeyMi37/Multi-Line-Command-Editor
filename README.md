@@ -9,8 +9,30 @@ Desktop Docker from Windows Command _and WebTerminal._
 
 This broad range of terminal emulations required navigation without any \<ESC> sequences   
 as some of them are quite restrictive on input. So it got a little bit feeling like vi.  
-  
-## Installation & Execution ##  
+## Installation with Docker ## 
+__Prerequisites__
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)    
+and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.  
+__Installation__ 
+Clone/git pull the repo into any local directory
+```
+$ git clone https://github.com/intersystems-community/objectscript-docker-template.git
+```
+Open the terminal in this directory and run:
+```
+$ docker-compose build
+```
+3. Run the IRIS container with your project:
+```
+$ docker-compose up -d
+```
+__How to Test it in Docker__
+Open IRIS terminal:
+```
+$ docker-compose exec iris iris session iris
+USER>ZME
+```
+## Installation from ZPM ##  
 Import ZME.xml to any namespace.  
 
 After the first start you can trigger a system-wide installation in _%SYS_ as %zme     
@@ -20,14 +42,12 @@ At first run and if not a Command Extention just call it from terminal command p
 ~~~  
   USER>do ^zme  
 ~~~
-
 ## Usage ##
 at the prompt _USER:zme>1_   
 enter commands as usual in terminal   
 trigger execution by an empty line  with \<enter>  
 
 These Editor Commands are implemented:  
-
 ~~~
     USER>d ^zme
  
