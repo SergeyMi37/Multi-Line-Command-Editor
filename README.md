@@ -10,9 +10,9 @@ Desktop Docker from Windows Command _and WebTerminal._
 This broad range of terminal emulations required navigation without any \<ESC> sequences   
 as some of them are quite restrictive on input. So it got a little bit feeling like vi.  
 ## Installation with Docker ## 
-__Prerequisites__
-Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.  
-__Installation__ 
+__Prerequisites__   
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.    
+__Installation__    
 Clone/git pull the repo into any local directory
 ```
 $ git clone https://github.com/intersystems-community/objectscript-docker-template.git
