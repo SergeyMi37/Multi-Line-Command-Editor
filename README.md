@@ -53,5 +53,5 @@ These Editor Commands are implemented:
 
     USER:zml>1
 ~~~
-[see Video](https://www.youtube.com/watch?v=vwE-agZxRW8)
-[Article in DC](https://community.intersystems.com/post/terminal-multi-line-command-editor)
+[see Video](https://www.youtube.com/watch?v=vwE-agZxRW8)   
+[Article in DC](https://community.intersystems.com/post/terminal-multi-line-command-editor)    
