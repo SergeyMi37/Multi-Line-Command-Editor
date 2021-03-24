@@ -1,4 +1,4 @@
-ROUTINE zme.mac	
+ROUTINE zme
 #; %zml + editor
 	write !,"Entering multi line mode."
 	do setup, help
