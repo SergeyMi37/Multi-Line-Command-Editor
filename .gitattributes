@@ -5,3 +5,8 @@
 *.inc text eol=lf
 Dockerfil* text eol=lf
  
+*.cls linguist-language=ObjectScript
+*.mac linguist-language=ObjectScript
+*.int linguist-language=ObjectScript
+*.inc linguist-language=ObjectScript
+*.csp linguist-language=Html
